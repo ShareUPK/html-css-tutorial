@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: initial;
+}
+
+html {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 1400px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav {
+    height: 50px;
+    background-color: #000;
+}
+
+.nav__list {
+    display:inline-flex;
+    list-style: none;
+}
+
+.nav__list > li {
+    line-height: 50px;
+}
+
+.nav__link {
+    display: block;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav__bars-btn {
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    margin: 12px 8px;
+    /* display: none; */
+}
+
+.nav__bars-icon {
+    font-size: 20px;
+}
+
+.nav__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+.fa-bars {
+    cursor: pointer;
+}
+
+/* Mobie */
+
+.nav__mobie {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: #fff;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform linear 0.2s;
+}
+
+.nav__mobie-list {
+    margin-top: 24px;
+    list-style: none;
+}
+
+.nav__mobie-close {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    color: #666;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.nav__mobie-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.nav__input:checked ~ .nav__mobie {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.nav__input:checked ~ .nav__overlay {
+    display: block
+}
+
+@media (max-width: 1023px) {
+    .nav__bars-btn {
+        display: block;
+    }
+
+    .nav__list {
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
